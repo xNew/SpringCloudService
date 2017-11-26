@@ -1,0 +1,23 @@
+spring:
+  application:
+    name : x-team-config
+  #配置源
+  cloud:
+    config:
+      server:
+        git:
+          #仓库地址
+          uri: https://github.com/xNew/SpringCloudConfig
+          # git仓库访问权限配置 username 用户名 password 密码
+          #username: xteam
+          #password: password
+
+server:
+  port : 9011
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9001/eureka/
+  instance:
+      prefer-ip-address: true

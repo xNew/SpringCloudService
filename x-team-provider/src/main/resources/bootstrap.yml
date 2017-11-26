@@ -1,0 +1,30 @@
+spring:
+  application:
+    name : x-team-provider
+  #当前的profile
+  profiles:
+    active: dev
+  cloud:
+    config:
+      #指定配置文件的名称 configName
+      name: x-team-provider
+      failFast: true
+      #指定配置中心服务
+      discovery:
+        enabled: true
+        service-id: x-team-config
+      profile: pro
+
+management:
+  security:
+    enabled: false
+
+server:
+  port : 9020
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9001/eureka/
+  instance:
+      prefer-ip-address: true
